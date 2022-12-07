@@ -1,11 +1,9 @@
 <?php
 !defined('INIT_PHPV') && die('非法操作！请与管理员联系!');
 
-$urlllll = 'sql.freedb.tech';
-$userrrrr = 'freedb_olog-db-user';
-$passwddddd = '!56%UvWCaVFXvN%';
-$con = mysqli_connect($urlllll, $userrrrr, $passwddddd, 'freedb_olog-db', 3306);
-
+$con = mysqli_init();
+$con->ssl_set(NULL, NULL, "/etc/ssl/certs/ca-certificates.crt", NULL, NULL);
+$con->real_connect($_ENV["HOST"], $_ENV["USERNAME"], $_ENV["PASSWORD"], $_ENV["DATABASE"]);
 
 
 ?>
